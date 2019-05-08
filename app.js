@@ -57,12 +57,15 @@ app.set('secret', 'thisismysecret');
 app.use(expressJWT({
 	secret: 'thisismysecret'
 }).unless({
-	path: ['/users']
+	path: ['/users', '/status']
 }));
 app.use(bearerToken());
+
 app.use(function(req, res, next) {
 	logger.debug(' ------>>>>>> new request for %s',req.originalUrl);
 	if (req.originalUrl.indexOf('/users') >= 0) {
+		return next();
+	} else if (req.originalUrl.indexOf('/status') >= 0) {
 		return next();
 	}
 
@@ -102,6 +105,16 @@ function getErrorMessage(field) {
 	};
 	return response;
 }
+
+
+app.get('/status', function(req, res) {
+	let response = {
+		status: true,
+		message: 'REST server is up and running'
+	};
+	res.send(response);
+});
+
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////// REST ENDPOINTS START HERE ///////////////////////////
