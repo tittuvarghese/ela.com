@@ -4,12 +4,12 @@
   "description": "A balance-transfer example node program to demonstrate using node.js SDK APIs",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "ava tests/e2e.js --verbose --serial",
+    "test:watch": "node_modules/.bin/ava --verbose --watch"
   },
   "keywords": [
-    "fabric-client sample app",
-    "balance-transfer node sample",
-    "v1.0 fabric nodesdk sample"
+    "Ela, Fabric Blockchain Application"
   ],
   "engines": {
     "node": ">=8.9.4 <9.0",
@@ -28,6 +28,10 @@
     "fabric-client": "~1.3.0",
     "fs-extra": "^2.0.0",
     "jsonwebtoken": "^7.3.0",
-    "log4js": "^0.6.38"
+    "log4js": "^0.6.38",
+    "supertest": "^3.3.0"
+  },
+  "devDependencies": {
+    "ava": "^1.0.1"
   }
 }
