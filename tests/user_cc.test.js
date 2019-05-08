@@ -8,7 +8,7 @@ test("Request to create user records targeting peers from " + CONSTANTS.ORG1_NAM
   .post('/channels/' + CONSTANTS.CHANNEL_NAME + '/chaincodes/' + CONSTANTS.CHAINCODE_NAME + '/' + CONSTANTS.FCN_CREATE_USER)
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG1_JWT)
   .send({
-    peers: ["peer6.patient.rxmed.com"],
+    peers: ["peer0.org1.ela.com"],
     args: ["PL-USR001", {
       user_id : "PL-USR001",
       name: {
