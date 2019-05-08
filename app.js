@@ -319,7 +319,7 @@ app.post('/channels/:channelName/chaincodes/:chaincodeName/:fcn', async function
 		args[1] = JSON.stringify(args[1]); // Converting Data as JSON String
 	}
 
-	let message = await invoke.invokeChaincode(peers, channelName, chaincodeName, fcn, args, req.username, req.orgname);
+  let message = await invoke.invokeChaincode(peers, channelName, chaincodeName, fcn, args, req.username, req.orgname);
 	res.send(message);
 });
 // Query on chaincode on target peers
