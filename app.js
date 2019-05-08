@@ -292,7 +292,6 @@ app.post('/channels/:channelName/chaincodes/:chaincodeName/:fcn', async function
 	var channelName = req.params.channelName;
 
   let fcn = req.params.fcn;;
-  let peers = req.body.peers;
   let args = req.body.args;
 
 	logger.debug('channelName  : ' + channelName);
