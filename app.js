@@ -315,6 +315,9 @@ app.post('/channels/:channelName/chaincodes/:chaincodeName/:fcn', async function
 		res.json(getErrorMessage('\'args\''));
 		return;
 	}
+  if(args && args[1] && typeof(args[1]) == 'object') {
+		args[1] = JSON.stringify(args[1]); // Converting Data as JSON String
+	}
 
 	let message = await invoke.invokeChaincode(peers, channelName, chaincodeName, fcn, args, req.username, req.orgname);
 	res.send(message);
