@@ -322,43 +322,44 @@ app.post('/channels/:channelName/chaincodes/:chaincodeName/:fcn', async function
   let message = await invoke.invokeChaincode(peers, channelName, chaincodeName, fcn, args, req.username, req.orgname);
 	res.send(message);
 });
+
 // Query on chaincode on target peers
-app.get('/channels/:channelName/chaincodes/:chaincodeName', async function(req, res) {
-	logger.debug('==================== QUERY BY CHAINCODE ==================');
-	var channelName = req.params.channelName;
-	var chaincodeName = req.params.chaincodeName;
-	let args = req.query.args;
-	let fcn = req.query.fcn;
+app.get('/channels/:channelName/chaincodes/:chaincodeName/:fcn/:args', async function(req, res) {
+	logger.debug('==================== QUERY BY CHAINCODE - ' + req.params.fcn + ' ==================');
+	let channelName = req.params.channelName;
+	let chaincodeName = req.params.chaincodeName;
+	let args = [];
+	args.push(req.params.args);
+	let fcn = req.params.fcn;
 	let peer = req.query.peer;
 
 	logger.debug('channelName : ' + channelName);
 	logger.debug('chaincodeName : ' + chaincodeName);
-	logger.debug('fcn : ' + fcn);
+	logger.debug('peer : ' + peer);
 	logger.debug('args : ' + args);
 
 	if (!chaincodeName) {
-		res.json(getErrorMessage('\'chaincodeName\''));
+		res.json(getErrorMessage('chaincodeName'));
 		return;
 	}
 	if (!channelName) {
-		res.json(getErrorMessage('\'channelName\''));
-		return;
-	}
-	if (!fcn) {
-		res.json(getErrorMessage('\'fcn\''));
+		res.json(getErrorMessage('channelName'));
 		return;
 	}
 	if (!args) {
-		res.json(getErrorMessage('\'args\''));
+		res.json(getErrorMessage('search key'));
 		return;
 	}
-	args = args.replace(/'/g, '"');
-	args = JSON.parse(args);
-	logger.debug(args);
+	if (!peer) {
+		res.json(getErrorMessage('peer'));
+		return;
+	}
 
 	let message = await query.queryChaincode(peer, channelName, chaincodeName, args, fcn, req.username, req.orgname);
 	res.send(message);
 });
+
+
 //  Query Get Block by BlockNumber
 app.get('/channels/:channelName/blocks/:blockId', async function(req, res) {
 	logger.debug('==================== GET BLOCK BY NUMBER ==================');
