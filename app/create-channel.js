@@ -51,7 +51,7 @@ var createChannel = async function(channelName, channelConfigPath, username, org
 			logger.debug('Successfully created the channel.');
 			let response = {
 				success: true,
-				message: 'Channel \'' + channelName + '\' created Successfully'
+				message: 'Channel ' + channelName + ' created Successfully'
 			};
 			return response;
 		} else {

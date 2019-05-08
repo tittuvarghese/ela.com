@@ -96,7 +96,7 @@ var updateAnchorPeers = async function(channelName, configUpdatePath, username, 
 
 	if (!error_message) {
 		let message = util.format(
-			'Successfully update anchor peers in organization %s to the channel \'%s\'',
+			'Successfully update anchor peers in organization %s to the channel %s',
 			org_name, channelName);
 		logger.info(message);
 		let response = {

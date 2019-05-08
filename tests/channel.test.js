@@ -23,7 +23,7 @@ test("Request to join with valid peers (peer 0 and peer1) from " + CONSTANTS.ORG
   t.is(response.status, 200);
   t.deepEqual(response.body, {
     success: true,
-    message: "Successfully joined peers in organization " + CONSTANTS.ORG1_NAME + " to the channel: " + CONSTANTS.CHANNEL_NAME
+    message: "Successfully joined peers in organization " + CONSTANTS.ORG1_NAME + " to the channel:" + CONSTANTS.CHANNEL_NAME
   });
 });
 
@@ -35,7 +35,7 @@ test("Request to join with valid peers (peer 0 and peer1) from " + CONSTANTS.ORG
   t.is(response.status, 200);
   t.deepEqual(response.body, {
     success: true,
-    message: "Successfully joined peers in organization " + CONSTANTS.ORG2_NAME + " to the channel: " + CONSTANTS.CHANNEL_NAME
+    message: "Successfully joined peers in organization " + CONSTANTS.ORG2_NAME + " to the channel:" + CONSTANTS.CHANNEL_NAME
   });
 });
 
