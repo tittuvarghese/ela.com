@@ -43,8 +43,7 @@ let instantiateChaincode = async function(peers, channelName, chaincodeName, cha
 			chaincodeType: chaincodeType,
 			chaincodeVersion: chaincodeVersion,
 			fcn: functionName,
-			txId: tx_id,
-			'collections-config': __dirname + '/endorsement/collections_config.json',
+			txId: tx_id
 		};
 
 		let results = await channel.sendInstantiateProposal(request, CONSTANTS.INSTANTIATION_TIMEOUT);

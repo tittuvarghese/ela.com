@@ -16,3 +16,5 @@ exports.CHAINCODE_TYPE = 'golang';
 exports.CHAINCODE_VERSION = 'v1.0';
 exports.ANCHOR_CONFIG_PATH_ORG1 = "../artifacts/channel/Org1MSPanchors.tx";
 exports.ANCHOR_CONFIG_PATH_ORG2 = "../artifacts/channel/Org2MSPanchors.tx";
+
+exports.FCN_INIT = "init";
