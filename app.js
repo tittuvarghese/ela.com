@@ -319,6 +319,10 @@ app.post('/channels/:channelName/chaincodes/:chaincodeName/:fcn', async function
 		args[1] = JSON.stringify(args[1]); // Converting Data as JSON String
 	}
 
+  if(fcn == "updateUser") {
+    args.push(req.username)  
+  }
+
   let message = await invoke.invokeChaincode(peers, channelName, chaincodeName, fcn, args, req.username, req.orgname);
 	res.send(message);
 });
