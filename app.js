@@ -285,17 +285,21 @@ app.post('/channels/:channelName/chaincodes', async function(req, res) {
 	res.send(message);
 });
 // Invoke transaction on chaincode on target peers
-app.post('/channels/:channelName/chaincodes/:chaincodeName', async function(req, res) {
+app.post('/channels/:channelName/chaincodes/:chaincodeName/:fcn', async function(req, res) {
 	logger.debug('==================== INVOKE ON CHAINCODE ==================');
 	var peers = req.body.peers;
 	var chaincodeName = req.params.chaincodeName;
 	var channelName = req.params.channelName;
-	var fcn = req.body.fcn;
-	var args = req.body.args;
+
+  let fcn = req.params.fcn;;
+  let peers = req.body.peers;
+  let args = req.body.args;
+
 	logger.debug('channelName  : ' + channelName);
 	logger.debug('chaincodeName : ' + chaincodeName);
 	logger.debug('fcn  : ' + fcn);
 	logger.debug('args  : ' + args);
+
 	if (!chaincodeName) {
 		res.json(getErrorMessage('\'chaincodeName\''));
 		return;

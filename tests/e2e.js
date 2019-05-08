@@ -4,3 +4,4 @@ require('./identity.test.js');
 require('./user.test.js');
 require('./channel.test.js');
 require('./chaincode.test.js');
+require('./user_cc.test.js');
