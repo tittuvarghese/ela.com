@@ -20,6 +20,7 @@ exports.ANCHOR_CONFIG_PATH_ORG2 = "../artifacts/channel/Org2MSPanchors.tx";
 exports.FCN_INIT = "init";
 exports.FCN_CREATE_USER = "createUser"
 exports.FCN_QUERY_USER = "queryUser"
+exports.FCN_UPDATE_USER = "updateUser"
 
 /* Timeout Settings */
 exports.JOIN_CHANNEL_TIMEOUT = 10000;
