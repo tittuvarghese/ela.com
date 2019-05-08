@@ -21,10 +21,10 @@ test("Request to install Chaincode to with valid parameters on " + CONSTANTS.ORG
   });
 });
 
-test("Request to install Chaincode to with valid parameters on " + CONSTANTS.ORG1_NAME, async t => {
+test("Request to install Chaincode to with valid parameters on " + CONSTANTS.ORG2_NAME, async t => {
   const response = await request(app)
   .post('/chaincodes')
-  .set('Authorization', 'Bearer ' + CONSTANTS.ORG1_JWT)
+  .set('Authorization', 'Bearer ' + CONSTANTS.ORG2_JWT)
   .send({
 	peers: ['peer0.org2.ela.com','peer1.org2.ela.com'],
 	chaincodeName: CONSTANTS.CHAINCODE_NAME,
