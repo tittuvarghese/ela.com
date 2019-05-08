@@ -44,7 +44,7 @@ test("Request to instantiate Chaincode with valid parameters on Org1", async t =
   .post('/channels/'+ CONSTANTS.CHANNEL_NAME +'/chaincodes')
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG1_JWT)
   .send({
-    peers: ["peer0.org1.ela.com", "peer1.org1.ela.com"],
+    peers: ["peer0.org1.ela.com"],
   	chaincodeName: CONSTANTS.CHAINCODE_NAME,
     chaincodeVersion: CONSTANTS.CHAINCODE_VERSION,
   	chaincodeType: CONSTANTS.CHAINCODE_TYPE,
