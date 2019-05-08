@@ -15,7 +15,7 @@ test("Request to create user records targeting peers from " + CONSTANTS.ORG1_NAM
         first_name: "Adam",
         last_name: "Smith"
       },
-      email : "user@propertylist.io",
+      email : "user@org1.ela.com",
       password : "qwerty123",
       country : "India",
       phone_number : "+91-9876543210",
@@ -44,7 +44,7 @@ test("Query user records from peer of " + CONSTANTS.ORG2_NAME + "Org", async t =
         first_name: "Adam",
         last_name: "Smith"
       },
-      email : "user@propertylist.io",
+      email : "user@org1.ela.com",
       password : "qwerty123",
       country : "India",
       phone_number : "+91-9876543210",
@@ -89,7 +89,7 @@ test("Query user records from peer of " + CONSTANTS.ORG2_NAME + "Org to check up
         first_name: "Joan",
         last_name: "Smith"
       },
-      email : "user@propertylist.io",
+      email : "user@org1.ela.com",
       password : "qwerty123",
       country : "India",
       phone_number : "+91-9876543211",
