@@ -9,7 +9,7 @@ import (
 )
 
 // createUser - Creates a User Records and callback representing the transactionID
-// @params user_id, name, email, password, country, phone_number, profile_image, role
+// @params user_id, name, email, phone_number, profile_image, role
 // @params name {first_name, last_name}
 func (t *elaChainCode) createUser(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 

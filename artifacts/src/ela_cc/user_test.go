@@ -6,26 +6,24 @@ import (
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
 
-const userID = "PL-USR001"
-const userEmail = "user@propertylist.io"
+const userID = "ELU-001"
+const userEmail = "user@ela.com"
 
 // Request - Create User
 const createUserRequest = `{
-  "user_id" : "PL-USR001",
+  "user_id" : "ELU-001",
   "name": {
     "first_name": "Adam",
     "last_name": "Smith"
   },
-  "email" : "user@propertylist.io",
-  "password" : "qwerty123",
-  "country" : "India",
+  "email" : "user@ela.com",
   "phone_number" : "+91-9876543210",
   "profile_image" : "profile_image_url_ipfs",
-  "role" : "buyer"
+  "role" : "producer"
 }`
 
 // Response - Query User
-const queryUserResponse = `{"user_id":"PL-USR001","name":{"first_name":"Adam","last_name":"Smith"},"email":"user@propertylist.io","password":"qwerty123","country":"India","phone_number":"+91-9876543210","profile_image":"profile_image_url_ipfs","role":"buyer"}`
+const queryUserResponse = `{"user_id":"ELU-001","name":{"first_name":"Adam","last_name":"Smith"},"email":"user@ela.com","phone_number":"+91-9876543210","profile_image":"profile_image_url_ipfs","role":"producer"}`
 
 // Request - Update User
 const updateUserRequest = `{
@@ -33,13 +31,12 @@ const updateUserRequest = `{
     "first_name": "Adam",
     "last_name": "Johns"
   },
-  "password" : "qwerty123",
   "phone_number" : "+91-9876543211",
-  "role" : "buyer"
+  "role" : "producer"
 }`
 
 // Response - Updated User
-const queryUpdatedUserResponse = `{"user_id":"PL-USR001","name":{"first_name":"Adam","last_name":"Johns"},"email":"user@propertylist.io","password":"qwerty123","country":"India","phone_number":"+91-9876543211","profile_image":"profile_image_url_ipfs","role":"buyer"}`
+const queryUpdatedUserResponse = `{"user_id":"ELU-001","name":{"first_name":"Adam","last_name":"Johns"},"email":"user@ela.com","phone_number":"+91-9876543211","profile_image":"profile_image_url_ipfs","role":"producer"}`
 
 func Test_CreateUser(t *testing.T) {
 	chaincodeToInvoke := CCName
