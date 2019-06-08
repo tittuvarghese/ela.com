@@ -139,6 +139,8 @@ func (t *elaChainCode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 		return t.updateTransaction(stub, args)
 		// updateTransaction - to update Transaction record
 		// Updates transaction records with TransactionID as key.
+	} else if function == "getHistory" {
+		return t.getHistory(stub, args)
 	}
 
 	logger.Errorf("Unknown action, check the first argument, must be one of 'createUser', 'queryUser', 'updateUser'. But got: %v", args[0])

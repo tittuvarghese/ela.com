@@ -63,4 +63,5 @@ func Test_UpdateTransaction(t *testing.T) {
 	checkQuery(t, stub, "queryTransaction", transactionID, queryTransactionResponse)
 	checkInvoke(t, stub, [][]byte{[]byte("updateTransaction"), []byte(transactionID), []byte(updateTransactionRequest)})
 	checkQuery(t, stub, "queryTransaction", transactionID, queryUpdatedTransactionResponse)
+	checkQuery(t, stub, "getHistory", transactionID, "not implemented")
 }
