@@ -5,8 +5,8 @@ exports.ORG1_EMAIL = "org1.ela.com"
 exports.ORG2_EMAIL = "org2.ela.com"
 
 /* Authentication Tokens */
-exports.ORG1_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTczNDY3MjIsInVzZXJuYW1lIjoidXNlckBvcmcxLmVsYS5jb20iLCJvcmdOYW1lIjoiT3JnMSIsImlhdCI6MTU1NzMxMDcyMn0.Zt1s6A8dKsitWUrseUtsorIvAIQJzJUF1_cMEVu1jGA';
-exports.ORG2_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTczNDY3NTMsInVzZXJuYW1lIjoidXNlckBvcmcyLmVsYS5jb20iLCJvcmdOYW1lIjoiT3JnMiIsImlhdCI6MTU1NzMxMDc1M30.id50oA3tQVuW_o5FwxjKnwJxd9nqdRKBAe0NnWUDLSQ';
+exports.ORG1_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA4MzgwODIsInVzZXJuYW1lIjoidXNlckBvcmcxLmVsYS5jb20iLCJvcmdOYW1lIjoiT3JnMSIsImlhdCI6MTU1OTk3NDA4Mn0.tF5YEE58D1XauGfWJF30rbQZ9zDunfjyvm60nk2Mi_U';
+exports.ORG2_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA4MzgxMDksInVzZXJuYW1lIjoidXNlckBvcmcyLmVsYS5jb20iLCJvcmdOYW1lIjoiT3JnMiIsImlhdCI6MTU1OTk3NDEwOX0.VRWpZKHitTz25zeEz6bwrNLVSwOnkeN2ms8DDWyu69Y';
 
 exports.CHANNEL_NAME = 'mychannel';
 exports.CHANNEL_CONFIG_PATH = '../artifacts/channel/mychannel.tx';
