@@ -78,7 +78,7 @@ test("Query user records from peer of " + CONSTANTS.ORG2_NAME + "Org to check up
   t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_QUERY_USER +' - ELP-USR001');
   t.deepEqual(response.body, {
     success: true,
-    message: "Found results for queryUser - PL-USR001",
+    message: "Found results for queryUser - ELP-USR001",
     data: {
       user_id : "ELP-USR001",
       name: {

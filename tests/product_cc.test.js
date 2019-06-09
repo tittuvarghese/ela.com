@@ -91,7 +91,7 @@ test("Query history of product from peer of " + CONSTANTS.ORG2_NAME + "Org to ch
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG2_JWT);
   t.is(response.status, 200);
   t.is(response.body.success, true);
-  t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_QUERY_PRODUCT +' - ELP-PRODUCT001');
+  t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_PRODUCT_HISTORY +' - ELP-PRODUCT001');
   t.deepEqual(response.body, {
     success: true,
     message: "Found results for getHistory - ELP-PRODUCT001",
