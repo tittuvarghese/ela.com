@@ -94,7 +94,7 @@ test("Query history of product from peer of " + CONSTANTS.ORG2_NAME + "Org to ch
   t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_QUERY_PRODUCT +' - ELP-PRODUCT001');
   t.deepEqual(response.body, {
     success: true,
-    message: "Found results for queryProduct - ELP-PRODUCT001",
+    message: "Found results for getHistory - ELP-PRODUCT001",
     data: {
       id: "ELP-PRODUCT001",
       name: "Tomato",

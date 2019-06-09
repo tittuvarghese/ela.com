@@ -32,7 +32,7 @@ test("Query user records from peer of " + CONSTANTS.ORG2_NAME + "Org", async t =
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG2_JWT);
   t.is(response.status, 200);
   t.is(response.body.success, true);
-  t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_QUERY_USER +' - PL-USR001');
+  t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_QUERY_USER +' - ELP-USR001');
   t.deepEqual(response.body, {
     success: true,
     message: "Found results for queryUser - ELP-USR001",
@@ -75,7 +75,7 @@ test("Query user records from peer of " + CONSTANTS.ORG2_NAME + "Org to check up
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG2_JWT);
   t.is(response.status, 200);
   t.is(response.body.success, true);
-  t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_QUERY_USER +' - PL-USR001');
+  t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_QUERY_USER +' - ELP-USR001');
   t.deepEqual(response.body, {
     success: true,
     message: "Found results for queryUser - PL-USR001",
