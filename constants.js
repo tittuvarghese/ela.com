@@ -27,6 +27,9 @@ exports.FCN_QUERY_PRODUCT = "queryProduct"
 exports.FCN_UPDATE_PRODUCT = "updateProduct"
 exports.FCN_PRODUCT_HISTORY = "getHistory"
 
+exports.FCN_CREATE_TXN = "createTransaction"
+exports.FCN_QUERY_TXN = "queryTransaction"
+exports.FCN_UPDATE_TXN = "updateTransaction"
 
 /* Timeout Settings */
 exports.JOIN_CHANNEL_TIMEOUT = 10000;
