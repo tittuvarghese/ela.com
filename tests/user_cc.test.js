@@ -9,18 +9,16 @@ test("Request to create user records targeting peers from " + CONSTANTS.ORG1_NAM
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG1_JWT)
   .send({
     peers: ["peer0.org1.ela.com"],
-    args: ["PL-USR001", {
-      user_id : "PL-USR001",
+    args: ["ELP-USR001", {
+      user_id : "ELP-USR001",
       name: {
         first_name: "Adam",
         last_name: "Smith"
       },
       email : "user@org1.ela.com",
-      password : "qwerty123",
-      country : "India",
       phone_number : "+91-9876543210",
       profile_image : "profile_image_url_ipfs",
-      role : "buyer"
+      role : "producer"
     }]
   });
   t.is(response.status, 200);
@@ -30,26 +28,24 @@ test("Request to create user records targeting peers from " + CONSTANTS.ORG1_NAM
 
 test("Query user records from peer of " + CONSTANTS.ORG2_NAME + "Org", async t => {
   const response = await request(app)
-  .get('/channels/' + CONSTANTS.CHANNEL_NAME + '/chaincodes/' + CONSTANTS.CHAINCODE_NAME + '/' + CONSTANTS.FCN_QUERY_USER + '/PL-USR001?peer=peer0.org2.ela.com')
+  .get('/channels/' + CONSTANTS.CHANNEL_NAME + '/chaincodes/' + CONSTANTS.CHAINCODE_NAME + '/' + CONSTANTS.FCN_QUERY_USER + '/ELP-USR001?peer=peer0.org2.ela.com')
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG2_JWT);
   t.is(response.status, 200);
   t.is(response.body.success, true);
   t.is(response.body.message, 'Found results for '+ CONSTANTS.FCN_QUERY_USER +' - PL-USR001');
   t.deepEqual(response.body, {
     success: true,
-    message: "Found results for queryUser - PL-USR001",
+    message: "Found results for queryUser - ELP-USR001",
     data: {
-      user_id : "PL-USR001",
+      user_id : "ELP-USR001",
       name: {
         first_name: "Adam",
         last_name: "Smith"
       },
       email : "user@org1.ela.com",
-      password : "qwerty123",
-      country : "India",
       phone_number : "+91-9876543210",
       profile_image : "profile_image_url_ipfs",
-      role : "buyer"
+      role : "producer"
     }
   });
 });
@@ -60,7 +56,7 @@ test("Request to update user records targeting peers from " + CONSTANTS.ORG1_NAM
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG1_JWT)
   .send({
     peers: ["peer0.org1.ela.com"],
-    args: ["PL-USR001", {
+    args: ["ELP-USR001", {
       name: {
         first_name: "Joan"
       },
@@ -75,7 +71,7 @@ test("Request to update user records targeting peers from " + CONSTANTS.ORG1_NAM
 
 test("Query user records from peer of " + CONSTANTS.ORG2_NAME + "Org to check update status", async t => {
   const response = await request(app)
-  .get('/channels/' + CONSTANTS.CHANNEL_NAME + '/chaincodes/' + CONSTANTS.CHAINCODE_NAME + '/' + CONSTANTS.FCN_QUERY_USER + '/PL-USR001?peer=peer0.org2.ela.com')
+  .get('/channels/' + CONSTANTS.CHANNEL_NAME + '/chaincodes/' + CONSTANTS.CHAINCODE_NAME + '/' + CONSTANTS.FCN_QUERY_USER + '/ELP-USR001?peer=peer0.org2.ela.com')
   .set('Authorization', 'Bearer ' + CONSTANTS.ORG2_JWT);
   t.is(response.status, 200);
   t.is(response.body.success, true);
@@ -84,17 +80,15 @@ test("Query user records from peer of " + CONSTANTS.ORG2_NAME + "Org to check up
     success: true,
     message: "Found results for queryUser - PL-USR001",
     data: {
-      user_id : "PL-USR001",
+      user_id : "ELP-USR001",
       name: {
         first_name: "Joan",
         last_name: "Smith"
       },
       email : "user@org1.ela.com",
-      password : "qwerty123",
-      country : "India",
       phone_number : "+91-9876543211",
       profile_image : "profile_image_url_ipfs_2",
-      role : "buyer"
+      role : "producer"
     }
   });
 });

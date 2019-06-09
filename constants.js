@@ -22,6 +22,12 @@ exports.FCN_CREATE_USER = "createUser"
 exports.FCN_QUERY_USER = "queryUser"
 exports.FCN_UPDATE_USER = "updateUser"
 
+exports.FCN_CREATE_PRODUCT = "createProduct"
+exports.FCN_QUERY_PRODUCT = "queryProduct"
+exports.FCN_UPDATE_PRODUCT = "updateProduct"
+exports.FCN_PRODUCT_HISTORY = "getHistory"
+
+
 /* Timeout Settings */
 exports.JOIN_CHANNEL_TIMEOUT = 10000;
 exports.INSTANTIATION_TIMEOUT = 600000;
