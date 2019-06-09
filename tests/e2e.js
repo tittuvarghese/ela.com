@@ -6,3 +6,4 @@ require('./channel.test.js');
 require('./chaincode.test.js');
 require('./user_cc.test.js');
 require('./product_cc.test.js');
+require('./transaction_cc.test.js');
