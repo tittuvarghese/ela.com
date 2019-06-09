@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "ava tests/e2e.js --verbose --serial",
+    "production": "ava tests/e2e_production.js --verbose --serial",
     "test:watch": "node_modules/.bin/ava --verbose --watch"
   },
   "keywords": [
